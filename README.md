@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
+## TODO
+- reorder: https://www.youtube.com/watch?v=teMC-JjA9E4&t=5684s
+- create compodoc
+
+
 ## ng new
 
 #### Install:
