@@ -1,0 +1,31 @@
+Estructura dentro de src/app:
+
+Ej. desde un proyecto creado con angular-cli
+
+1 - Dejar solo el app.module.ts (eliminar todo lo demás).
+2 - Crear un nuevo módulo llamado core -> ng g m core
+3 - Crear componente layout dentro de core/ -> ng g c core/layout
+4 - Reemplazar el tag app-root en el index.html por app-layout
+5 - Exportar el componente layout desde el módulo core para utilizarlo en bootstrap
+6 - Incluir rutas: Routes, RouterModule declarado dentro del core.module
+7 - Crear módulo home -> ng g m home
+8 - Crear módulo about -> ng g m about
+9 - Crear dentro de home/ un componente utilizando --flat true
+10 - En el ruteo declarar loadChildren de c/módulo a cargar con Lazy load.
+11 - Crear el ruteo en el home.module y en about.module aquí se indica el componente en cada ruta.
+
+LazyLoad permite cargar módulos no componentes.
+
+Notas:
+------
+(1): eliminar archivos.
+(2): incluir el CoreModule dentro de app.module.
+(3): este se incluye automáticamente dentro del módulo core.
+(4): el prefijo app se puede modificar al crear la aplicación o luego.
+(5): exports:[LayoutComponent] con esto podemos indicar que la app inicie con este componente desde el bootstrap: [LayoutComponent]
+(6): Las rutas se declaran dentro de core.module, importar RouterModule.forRoot(routes)
+(7) y (8): cualquier otro módulo fuera del core, no se exporta, solo se cargan on-demand desde el router.
+(9): el atributo --flat true, permine no anidar en una nueva carpeta.
+(10): loadChildren: './../home/home.module#HomeModule' el # indica el módulo dentro del archivo.
+(11): Lo mismo que en core.module incluir Routes y RouterModule e importar como forchild RouterModule.forChild(routes)
+en este último punto puede necesitar para el ng serve y correrlo nuevamente.
