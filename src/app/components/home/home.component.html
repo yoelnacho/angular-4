@@ -1,0 +1,4 @@
+<div *ngIf="condition;then with_condition else without_condition">here is ignored</div>
+
+<ng-template #with_condition><h1>{{title}}</h1></ng-template>
+<ng-template #without_condition><h1>No hay título</h1></ng-template>
