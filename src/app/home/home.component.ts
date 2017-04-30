@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
     title:string = 'Angular 4!';
     condition:boolean = true;
-
+    
     constructor() { }
 
     ngOnInit() {

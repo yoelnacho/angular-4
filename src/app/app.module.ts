@@ -2,34 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CoreModule } from 'app/core/core.module';
 
-// Router
-import { routes } from './app.router';
+// components
+import { LayoutComponent } from "app/core/layout/layout.component";
 
-// Components
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { NavComponent } from './components/shared/nav/nav.component';
-import { AboutComponent } from './components/about/about.component';
-
-// Directives
-import { LocationDirective } from './directives/location.directive';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        NavComponent,
-        AboutComponent,
-        LocationDirective
-    ],
-        imports: [
+    declarations: [],
+    imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
-        routes
+        CoreModule, // incluir módulo core
+        HttpModule
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [LayoutComponent]
 })
 export class AppModule { }
